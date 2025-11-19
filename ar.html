@@ -81,7 +81,7 @@
         font-weight: bold;
       }
 
-      /* 🔥 BOTÓN FÍSICO DE INICIO AR 🔥 */
+      /* BOTÓN FÍSICO DE INICIO AR */
       #start-ar {
         top: 55%;
         display: block;
@@ -115,96 +115,363 @@
 
     <!-- CONTENEDOR AR -->
     <div id="ar-container">
-  <a-scene
-    mindar-image="imageTargetSrc: ./targets.mind; autoStart: false"
-    color-space="sRGB"
-    renderer="colorManagement: true, physicallyCorrectLights: true"
-    vr-mode-ui="enabled: false"
-    device-orientation-permission-ui="enabled: false"
-    embedded
-  >
-    <!-- Precargar modelo -->
-    <a-assets timeout="20000">
-      <!-- model.glb en la raíz del proyecto -->
-      <a-asset-item id="brasilModel" src="./model.glb"></a-asset-item>
-    </a-assets>
+      <a-scene
+        mindar-image="imageTargetSrc: ./targets.mind; autoStart: false"
+        color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights: true"
+        vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false"
+        embedded
+      >
+        <!-- 🔹 ASSETS: MODELOS EN EL MISMO ORDEN QUE LAS BANDERAS -->
+        <a-assets timeout="20000">
+          <!-- 0 Brasil -->
+          <a-asset-item id="brasilModel" src="./model.glb"></a-asset-item>
+          <!-- 1 Alemania -->
+          <a-asset-item id="alemaniaModel" src="./beer_mug_glass.glb"></a-asset-item>
+          <!-- 2 Argentina -->
+          <a-asset-item id="argentinaModel" src="./porteria_futbol_sala_2.glb"></a-asset-item>
+          <!-- 3 Italia -->
+          <a-asset-item id="italiaModel" src="./pizza.glb"></a-asset-item>
+          <!-- 4 Francia -->
+          <a-asset-item id="franciaModel" src="./gioconda.glb"></a-asset-item>
+          <!-- 5 Inglaterra -->
+          <a-asset-item id="inglaterraModel" src="./telephone.glb"></a-asset-item>
+          <!-- 6 España -->
+          <a-asset-item id="espanaModel" src="./guitarra_espanola_millorada_adria_iter.glb"></a-asset-item>
+          <!-- 7 Uruguay -->
+          <a-asset-item id="uruguayModel" src="./moneda_uruguay_1981_50_centesimos.glb"></a-asset-item>
+          <!-- 8 México -->
+          <a-asset-item id="mexicoModel" src="./1_peso_mxn_-_moneda_-_coin.glb"></a-asset-item>
+          <!-- 9 Portugal -->
+          <a-asset-item id="portugalModel" src="./botella_de_vino_vieja.glb"></a-asset-item>
+          <!-- 10 Estados Unidos -->
+          <a-asset-item id="usaModel" src="./apple_pie_slice.glb"></a-asset-item>
+          <!-- 11 Corea del Sur -->
+          <a-asset-item id="coreaModel" src="./spam_korean_version.glb"></a-asset-item>
+          <!-- 12 Colombia -->
+          <a-asset-item id="colombiaModel" src="./sombrero_vueltiao_colombia.glb"></a-asset-item>
+          <!-- 13 Japón -->
+          <a-asset-item id="japonModel" src="./torii.glb"></a-asset-item>
+          <!-- 14 Marruecos -->
+          <a-asset-item id="marruecosModel" src="./fez.glb"></a-asset-item>
+          <!-- 15 Ecuador -->
+          <a-asset-item id="ecuadorModel" src="./volcan.glb"></a-asset-item>
+          <!-- 16 Uzbekistán -->
+          <a-asset-item id="uzbekistanModel" src="./numero_1.glb"></a-asset-item>
+          <!-- 17 Canadá -->
+          <a-asset-item id="canadaModel" src="./canadian_mountie_outfits.glb"></a-asset-item>
+        </a-assets>
 
-    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-    <!-- Brasil – targetIndex 0 -->
-    <a-entity mindar-image-target="targetIndex: 0">
-      <a-entity
-        gltf-model="#brasilModel"
-        position="0 0.1 0"
-        scale="0.1 0.1 0.1"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
-      ></a-entity>
+        <!-- 🔹 0: Brasil -->
+        <a-entity mindar-image-target="targetIndex: 0">
+          <a-entity
+            gltf-model="#brasilModel"
+            position="0 0.1 0"
+            scale="0.1 0.1 0.1"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Brasil: 5 copas del mundo"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
 
-      <a-text
-        value="Una seleccion excelente con 5 copas  en sus titulos"
-        position="0 -0.6 0"
-        align="center"
-        color="white"
-        width="2.4"
-      ></a-text>
-    </a-entity>
+        <!-- 🔹 1: Alemania -->
+        <a-entity mindar-image-target="targetIndex: 1">
+          <a-entity
+            gltf-model="#alemaniaModel"
+            position="0 0.1 0"
+            scale="0.08 0.08 0.08"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Alemania: potencia europea"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
 
-    <!-- Brasil – targetIndex 1 -->
-    <a-entity mindar-image-target="targetIndex: 1">
-      <a-entity
-        gltf-model="#brasilModel"
-        position="0 0.1 0"
-        scale="0.1 0.1 0.1"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
-      ></a-entity>
+        <!-- 🔹 2: Argentina -->
+        <a-entity mindar-image-target="targetIndex: 2">
+          <a-entity
+            gltf-model="#argentinaModel"
+            position="0 0.1 0"
+            scale="0.12 0.12 0.12"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Argentina: campeona del mundo"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
 
-      <a-text
-        value="Una seleccion excelente con 5 copas  en sus titulos"
-        position="0 -0.6 0"
-        align="center"
-        color="white"
-        width="2.4"
-      ></a-text>
-    </a-entity>
+        <!-- 🔹 3: Italia -->
+        <a-entity mindar-image-target="targetIndex: 3">
+          <a-entity
+            gltf-model="#italiaModel"
+            position="0 0.1 0"
+            scale="0.12 0.12 0.12"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Italia: pasión y pizza"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
 
-    <!-- Brasil – targetIndex 2 -->
-    <a-entity mindar-image-target="targetIndex: 2">
-      <a-entity
-        gltf-model="#brasilModel"
-        position="0 0.1 0"
-        scale="0.1 0.1 0.1"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
-      ></a-entity>
+        <!-- 🔹 4: Francia -->
+        <a-entity mindar-image-target="targetIndex: 4">
+          <a-entity
+            gltf-model="#franciaModel"
+            position="0 0.1 0"
+            scale="0.08 0.08 0.08"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Francia: arte y futbol"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
 
-      <a-text
-        value="Una seleccion excelente con 5 copas  en sus titulos"
-        position="0 -0.6 0"
-        align="center"
-        color="white"
-        width="2.4"
-      ></a-text>
-    </a-entity>
+        <!-- 🔹 5: Inglaterra -->
+        <a-entity mindar-image-target="targetIndex: 5">
+          <a-entity
+            gltf-model="#inglaterraModel"
+            position="0 0.1 0"
+            scale="0.1 0.1 0.1"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Inglaterra: cuna del futbol"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
 
-    <!-- Brasil – targetIndex 3 -->
-    <a-entity mindar-image-target="targetIndex: 3">
-      <a-entity
-        gltf-model="#brasilModel"
-        position="0 0.1 0"
-        scale="0.1 0.1 0.1"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
-      ></a-entity>
+        <!-- 🔹 6: España -->
+        <a-entity mindar-image-target="targetIndex: 6">
+          <a-entity
+            gltf-model="#espanaModel"
+            position="0 0.1 0"
+            scale="0.08 0.08 0.08"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="España: toque y guitarra"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
 
-      <a-text
-        value="Una seleccion excelente con 5 copas  en sus titulos"
-        position="0 -0.6 0"
-        align="center"
-        color="white"
-        width="2.4"
-      ></a-text>
-    </a-entity>
-  </a-scene>
-</div>
+        <!-- 🔹 7: Uruguay -->
+        <a-entity mindar-image-target="targetIndex: 7">
+          <a-entity
+            gltf-model="#uruguayModel"
+            position="0 0.1 0"
+            scale="0.2 0.2 0.2"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Uruguay: garra charrúa"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
 
+        <!-- 🔹 8: México -->
+        <a-entity mindar-image-target="targetIndex: 8">
+          <a-entity
+            gltf-model="#mexicoModel"
+            position="0 0.1 0"
+            scale="0.18 0.18 0.18"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="México: pasión tricolor"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 9: Portugal -->
+        <a-entity mindar-image-target="targetIndex: 9">
+          <a-entity
+            gltf-model="#portugalModel"
+            position="0 0.1 0"
+            scale="0.08 0.08 0.08"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Portugal: vino y talento"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 10: Estados Unidos -->
+        <a-entity mindar-image-target="targetIndex: 10">
+          <a-entity
+            gltf-model="#usaModel"
+            position="0 0.1 0"
+            scale="0.1 0.1 0.1"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Estados Unidos: apple pie y soccer"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.8"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 11: Corea del Sur -->
+        <a-entity mindar-image-target="targetIndex: 11">
+          <a-entity
+            gltf-model="#coreaModel"
+            position="0 0.1 0"
+            scale="0.12 0.12 0.12"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Corea del Sur: sabor K"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 12: Colombia -->
+        <a-entity mindar-image-target="targetIndex: 12">
+          <a-entity
+            gltf-model="#colombiaModel"
+            position="0 0.1 0"
+            scale="0.12 0.12 0.12"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Colombia: sombrero y alegría"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 13: Japón -->
+        <a-entity mindar-image-target="targetIndex: 13">
+          <a-entity
+            gltf-model="#japonModel"
+            position="0 0.1 0"
+            scale="0.14 0.14 0.14"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Japón: tradición y disciplina"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.8"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 14: Marruecos -->
+        <a-entity mindar-image-target="targetIndex: 14">
+          <a-entity
+            gltf-model="#marruecosModel"
+            position="0 0.1 0"
+            scale="0.16 0.16 0.16"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Marruecos: magia del Magreb"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.8"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 15: Ecuador -->
+        <a-entity mindar-image-target="targetIndex: 15">
+          <a-entity
+            gltf-model="#ecuadorModel"
+            position="0 0.1 0"
+            scale="0.08 0.08 0.08"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Ecuador: fútbol entre volcanes"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.8"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 16: Uzbekistán -->
+        <a-entity mindar-image-target="targetIndex: 16">
+          <a-entity
+            gltf-model="#uzbekistanModel"
+            position="0 0.1 0"
+            scale="0.14 0.14 0.14"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Uzbekistán: nueva potencia emergente"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.8"
+          ></a-text>
+        </a-entity>
+
+        <!-- 🔹 17: Canadá -->
+        <a-entity mindar-image-target="targetIndex: 17">
+          <a-entity
+            gltf-model="#canadaModel"
+            position="0 0.1 0"
+            scale="0.12 0.12 0.12"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+          ></a-entity>
+          <a-text
+            value="Canadá: sede de 2026"
+            position="0 -0.6 0"
+            align="center"
+            color="white"
+            width="2.4"
+          ></a-text>
+        </a-entity>
+      </a-scene>
+    </div>
 
     <script>
       const sceneEl = document.querySelector("a-scene");
@@ -243,6 +510,5 @@
         loadingEl.style.display = "block";
       });
     </script>
-
   </body>
 </html>
